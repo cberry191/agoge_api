@@ -1,3 +1,4 @@
+import { deleteMembership, getMemberships, newMembership, updateMembership } from '../controllers/membershipController.js';
 import { deleteUser, getUsers, newUser, updateUser } from '../controllers/userController.js';
 
 export const routes = (app) => {
@@ -6,4 +7,10 @@ export const routes = (app) => {
     .get(getUsers)
     .put(updateUser)
     .delete(deleteUser)
+
+    app.route('/memberships')
+    .post(newMembership)
+    .get(getMemberships)
+    .put(updateMembership)
+    .delete(deleteMembership)
 }
